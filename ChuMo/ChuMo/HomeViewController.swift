@@ -21,8 +21,14 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let commandCardContent = storyboard?.instantiateViewController(withIdentifier: "commandCardContent")
+        commandCard.shouldPresent(commandCardContent, from: self, fullscreen: true)
+        let paintingCardContent = storyboard?.instantiateViewController(withIdentifier: "paintingCardContent")
+        paintingCard.shouldPresent(paintingCardContent, from: self, fullscreen: true)
+        let galleryCardContent = storyboard?.instantiateViewController(withIdentifier: "galleryCardContent")
+        galleryCard.shouldPresent(galleryCardContent, from: self, fullscreen: true)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
